@@ -38,8 +38,8 @@ public class OscarService {
     public OscarService addLists(List<DadosOscar> a, List<DadosOscar> b){
         dadosOscars.stream()
                 .toList()
-                .addAll(a);
+                .addAll(b);
 
-                return (OscarService) dadosOscars;
+                return  dadosOscars;
     }
 }

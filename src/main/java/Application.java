@@ -31,7 +31,7 @@ public class Application {
 
 
 
-        dadosOscarTodos.addLists( dadosOscarFemale, dadosOscarMale);
+        dadosOscarTodos.addLists(dadosOscarFemale, dadosOscarMale);
         System.out.println(dadosOscarTodos);
 
         //dadosOscarFemale.printOscarSummary();
