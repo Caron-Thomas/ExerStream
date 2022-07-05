@@ -1,11 +1,14 @@
 package mappers;
 
 import model.DadosOscar;
+import model.Gender;
 
+import javax.naming.MalformedLinkException;
 import java.time.LocalDate;
 import java.util.function.Function;
 
 public class DadosOscarMapper implements Function<String, DadosOscar> {
+
 
     public DadosOscar apply(String o){
         var dadosEmLinha = o.split(";");

@@ -8,7 +8,10 @@ import service.OscarService;
 import util.FileUtil;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class Application {
     public static void main(String[] args) throws IOException {
@@ -19,20 +22,16 @@ public class Application {
 
 
         var fileUtilFemale = new FileUtil<DadosOscar>("oscar_age_female.csv");
-        var dadosOscarF = fileUtilFemale.readFile(new DadosOscarMapper());
+        List<DadosOscar>  dadosOscarF = fileUtilFemale.readFile(new DadosOscarMapper());
         var dadosOscarFemale = new OscarService(dadosOscarF, "female");
 
         var fileUtilMale = new FileUtil<DadosOscar>("oscar_age_male.csv");
-        var dadosOscarM = fileUtilMale.readFile(new DadosOscarMapper());
+        List<DadosOscar> dadosOscarM = fileUtilMale.readFile(new DadosOscarMapper());
         var dadosOscarMale = new OscarService(dadosOscarM, "male");
 
-        var dadosOscarTodos = new OscarService();
+        var oscarTodos = new OscarService();
+        oscarTodos.addLists(dadosOscarFemale, dadosOscarMale);
 
-
-
-
-        dadosOscarTodos.addLists(dadosOscarFemale, dadosOscarMale);
-        System.out.println(dadosOscarTodos);
 
         //dadosOscarFemale.printOscarSummary();
         //dadosOscarMale.printOscarSummary();
