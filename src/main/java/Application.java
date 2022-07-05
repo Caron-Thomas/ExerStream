@@ -29,10 +29,11 @@ public class Application {
         List<DadosOscar> dadosOscarM = fileUtilMale.readFile(new DadosOscarMapper());
         var dadosOscarMale = new OscarService(dadosOscarM, "male");
 
-        var oscarTodos = new OscarService();
-        oscarTodos.addLists(dadosOscarFemale, dadosOscarMale);
+        var dadosOscarTodos = new OscarService();
+        dadosOscarTodos.addLists(dadosOscarFemale.getDadosOscars(), dadosOscarMale.getDadosOscars());
 
 
+        dadosOscarTodos.printOscarSummary();
         //dadosOscarFemale.printOscarSummary();
         //dadosOscarMale.printOscarSummary();
 
