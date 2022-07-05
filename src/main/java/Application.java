@@ -22,18 +22,19 @@ public class Application {
 
 
         var fileUtilFemale = new FileUtil<DadosOscar>("oscar_age_female.csv");
-        List<DadosOscar>  dadosOscarF = fileUtilFemale.readFile(new DadosOscarMapper());
-        var dadosOscarFemale = new OscarService(dadosOscarF, "female");
-
         var fileUtilMale = new FileUtil<DadosOscar>("oscar_age_male.csv");
+
+        List<DadosOscar>  dadosOscarF = fileUtilFemale.readFile(new DadosOscarMapper());
         List<DadosOscar> dadosOscarM = fileUtilMale.readFile(new DadosOscarMapper());
-        var dadosOscarMale = new OscarService(dadosOscarM, "male");
 
-        var oscarTodos = new OscarService();
-        oscarTodos.addLists(dadosOscarFemale, dadosOscarMale);
+        var oscarService = new OscarService();
+        oscarService.setGender(dadosOscarF, "female");
+        oscarService.setGender(dadosOscarM, "male");
+
+        oscarService.addLists(dadosOscarF, dadosOscarM);
 
 
-        //dadosOscarFemale.printOscarSummary();
+        oscarService.printOscarSummary();
         //dadosOscarMale.printOscarSummary();
 
         //dengueService.printAnoMaiorQtdCasos();
