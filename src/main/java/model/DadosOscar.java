@@ -58,13 +58,7 @@ public class DadosOscar {
 
     @Override
     public String toString() {
-        return "DadosOscar{" +
-                "index=" + index +
-                ", year=" + year +
-                ", age=" + age +
-                ", name='" + name + '\'' +
-                ", movie='" + movie + '\'' +
-                ", sexo=" + sexo.getDescricao() +
-                '}';
+        return age + " anos / " +
+            "em " + year+" ";
     }
 }
