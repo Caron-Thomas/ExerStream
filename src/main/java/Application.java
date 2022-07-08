@@ -32,11 +32,13 @@ public class Application {
         var dadosOscarTodos = new OscarService();
         dadosOscarTodos.addLists(dadosOscarFemale.getDadosOscars(), dadosOscarMale.getDadosOscars()); //Lista dos Oscar
 
-
+        dadosOscarFemale.atorAtrizMaisPremiado1824();
+        //1)dadosOscarTodos.printAtorAtrizComMaisPremios();
+        //2)dadosOscarTodos.printAtorAtrizMaisJovem2();
+        //dadosOscarMale.printAtorAtrizComMaisPremios();
+        //dadosOscarMale.printAtorAtrizMaisJovem();
         //dadosOscarTodos.printOscarSummary();
-        //dadosOscarTodos.printAtorAtrizMaisJovem();
         //dadosOscarFemale.printAtorAtrizMaisJovem2();
-        dadosOscarMale.printAtorAtrizMaisJovem();
         //dadosOscarFemale.printOscarSummary();
         //dadosOscarMale.printOscarSummary();
 
@@ -47,7 +49,8 @@ public class Application {
         // 1 - Importar dataset - Ok
         // 2 - Criar model que represente os dados - Ok
         // 3 - Transformar os dois arquivos em apenas 1 stream - Ok
-        // 4 - Ator mais jovem a ser premiado
-        // 5 - Ator com maior qtd de prêmios
+        // 4 - Ator mais jovem a ser premiado - Ok
+        // 5 - Ator com maior qtd de prêmios - Ok
+        // 6 - Ator entre 18 e 24 anos - (semi)ok
     }
 }
